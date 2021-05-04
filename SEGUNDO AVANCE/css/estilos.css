@@ -1,0 +1,98 @@
+body{
+	/*background: #A4A4A4;*/
+background: #140202; /* Old browsers */
+background: -moz-linear-gradient(left,  #879caa 0%, #d3743d 98%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #677e77 0%,#b83434 98%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #dbe7eb 0%,#d1333360 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#140202', endColorstr='#ff1c1c',GradientType=1 ); /* IE6-9 */
+}
+#proposito{
+	border: #b83434 solid;
+	background: rgba(175, 133, 99, 0.219);
+}
+#mision-vision{
+	border: #b83434 solid;
+	background: rgba(175, 133, 99, 0.219);
+	color: black;
+	text-align: center;
+}
+.flotante{
+	background-color: cadetblue;
+    position: fixed;
+	border: 5px solid #140202;
+    border-radius: 50px;
+    z-index: 9;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 20px 0;
+    display: flex;
+}
+.subir{
+	height: 45px;
+    width: 50px;
+    margin: 0;
+	border-radius: 50%;
+}
+#copy{
+	text-align: center;
+}
+.redes{
+	text-decoration: none;
+	
+}
+
+#objetivos{
+	text-align: justify;
+}
+.navbar{
+
+	background: red;
+}
+.cabecera{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 15px 20px;
+	font-size: 20px;
+	z-index: 999;
+	margin: -15px 0 0 0;
+}
+.logo{
+	width: 100px;
+	height: 50px;
+}
+.carousel-inner{
+	height: 570px;
+	border: 1px solid rgba(31, 18, 21, 0.267);
+	margin: 80px 0 0 0;
+}
+#tituloP{
+	color: rgba(211, 44, 44, 0.74);
+	background: rgb(255, 255, 255);
+	/*arriba|derecha|Abajo|izquierda*/
+	margin: auto 1px -8px 1px ;	
+}
+
+.logo{
+	height: 50px;
+	width: 200px;
+	float: right;
+}
+h1{
+	text-align: center;
+}
+#malla{
+	width: 100%;
+	height: 700px;
+}
+.objetivo{
+	background: chocolate;
+	border: solid #b83434;
+}
+.nav-item .nav-link:hover{
+	background: #583d72;
+	color: white  !important;
+}
+footer{
+	background: #6f5885ab;
+}
