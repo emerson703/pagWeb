@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
+    <title>covid-mundo!😷</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">INICIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">COVID-19-MUNDO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#mapaM">MAPA MUNDIAL COVID-19</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contagiados">CASOS CONFIRMADOS COVID-19</a>
+                </li>
+    
+                <li class="nav-item">
+                  <a class="nav-link " href="#fallecidos">MUERTOS POR COVID-19</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#footer">CONTACTO</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <hr>
+    <hr>
+    <hr id="mapaM">
+    <br>
+    <hr>
+      <div class="container">
+          <h2 class="display-5">MAPA MUNDIAL SOBRE LA PROPAGACIÓN DEL COVID-19</h2>
+      </div>
+    <iframe class="mapaMundi" src="https://widgets.elpais.com/mapbox/2020/12/nuevo-mapa-mundial/index.html"  frameborder="0"></iframe>
+    <br>
+      <hr id="contagiados">
+      <br>
+      <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <canvas id="mundo">
+
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr id="fallecidos">
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <canvas id="muertos">
+
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <footer class="text-center footer-style" id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 footer-col">
+              <h3>COVID-19</h3>
+              <p>
+                Es muy importante que tengamos en cuenta que el COVID-19 no solamente puede afectar a nuestra salud física,
+                sino que tambien puede afectar a nuestra cibersalud.
+              </p>
+              <img width="100%" height="200px" src="imagen/Captura01.PNG" alt="">
+            </div>
+            <div class="col-md-4 footer-col">
+              <h3>Mis redes</h3>
+              <ul class="list-inline">
+                <hr>
+                <li>
+                  <a target="_blank" href="https://web.facebook.com/emerson.davilcas/" class="btn-social btn-outline"><img
+                      width="50px" height="50px" src="imagen/icon/facebook-f-brands.svg" alt=""></a>
+                </li>
+                <hr>
+                <li>
+                  <a target="_blank" href="https://www.instagram.com/emersonvilcas/?hl=es-la"
+                    class="btn-social btn-outline"><img width="50px" height="50px" src="imagen/icon/instagram-brands.svg"
+                      alt=""></a>
+                </li>
+                <hr>
+                <li>
+                  <a target="_blank" href="https://www.youtube.com/channel/UCfiquoBt9s0WPPJ6MrA53Dw"
+                    class="btn-social btn-outline"><img width="50px" height="50px" src="imagen/icon/youtube-brands.svg"
+                      alt=""></a>
+                </li>
+                <hr>
+                <p>&copy;Copyright</p>
+              </ul>
+            </div>
+            <div class="col-md-4 footer-col">
+              <!-- class="display-5  border-bottom: 2px groove"-->
+              <h3 style="border-bottom: 2px groove  tomato;">CONTACTO</h3>
+              <form action="">
+                <div class="mb-3">
+                  <label for="">Nombres</label>
+                  <input type="text" class="form-control" placeholder="Ingrese su Nombre">
+                </div>
+                <div class="mb-3">
+                  <label for="">Correo Electronico</label>
+                  <input type="text" class="form-control" placeholder="Ingrese su correo Electronico">
+                </div>
+                <div class="mb-3">
+                  <label for="">Ingrese Comentario</label>
+                  <textarea name="textmensaje" id="textmensaje" class="form-control" rows="3"></textarea>
+                </div>
+                <button class="btn btn-danger">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    let miCanvas = document.getElementById("mundo").getContext("2d");
+    var chart = new Chart(miCanvas, {
+        type: "bar",
+        data: {
+            labels: ["EEUU", "India", "Brasil", "Francia", "Turquia", "Rusia", "Reino Unido", "Italia", "Alemania",
+                "España", "Argentina", "Colombia", "Polonia", "Irán", "México", "Ucrania", "Perú", "Indonesia", "Chequia", "Paises Bajos",
+                "Sudafrica", "Canada", "Chile", "Filipinas", "Irak", "Rumania", "Suecia", "Bélgica", "Pakistan", "Portugal", "Israel",
+                "Hungria", "Banglades", "Jordania", "Japón", "Serbia", "Suiza", "Austria", "EE.AA.UU", "Líbano", "Marruecos", "Malasia"
+            ],
+            datasets: [{
+                label: "TOTAL DE CASOS CONTAGIADOS POR COVID 19 - MUNDO",
+                data: [33207442, 26031991, 15894049, 5728090, 4977982, 4863514, 4446824, 4178261, 3638504, 3631661, 3447044,
+                    3177212, 2861351, 2610018, 2390140, 2227400, 1893334, 1703632, 1641120, 1615500, 1590370, 1350785, 1308311,
+                    1165155, 1098187, 1062527, 1055173, 1007264, 893461, 843729, 838828, 800368, 769160, 717930, 705641, 697241,
+                    669067, 639616, 532710, 531234, 516091, 492302
+                ],
+                backgroundColor: [
+                    "rgb(255, 0, 0)",
+                    "rgb(254, 255, 0)",
+                    "rgb(255, 64, 0)"
+                ]
+            }]
+        },
+        options: {
+            indexAxis: "x"
+        },
+
+
+
+    })
+</script>
+
+<script>
+    let muertosCovid = document.getElementById("muertos").getContext("2d");
+    var chart = new Chart(muertosCovid, {
+        type: "bar",
+        data: {
+            labels: ["EEUU", "India", "Brasil", "Francia", "Turquia", "Rusia", "Reino Unido", "Italia", "Alemania",
+                "España", "Argentina", "Colombia", "Polonia", "Irán", "México", "Ucrania", "Perú", "Indonesia", "Chequia", "Paises Bajos",
+                "Sudafrica", "Canada", "Chile", "Filipinas", "Irak", "Rumania", "Suecia", "Bélgica", "Pakistan", "Portugal", "Israel",
+                "Hungria", "Banglades", "Jordania", "Japón", "Serbia", "Suiza", "Austria", "EE.AA.UU", "Líbano", "Marruecos", "Malasia"
+            ],
+            datasets: [{
+                label: "TOTAL DE CASOS MUERTOS POR COVID 19 - MUNDO",
+                data: [593533, 291331, 444094, 105850, 42187, 112622, 127668, 124810, 87135, 79601, 72699, 83233, 72500, 73906, 221080,
+                    50867, 66471, 46663, 29521, 17506, 54620, 25152, 28169, 19641, 15673, 28710, 14351, 24444, 20089, 17014, 6374, 29380,
+                    11796, 9014, 12006, 6499, 10110, 10527, 1607, 7417, 9109, 2099
+                ],
+                backgroundColor: [
+                    "rgb(255, 0, 0)",
+                    "rgb(254, 255, 0)",
+                    "rgb(255, 64, 0)"
+                ]
+            }]
+        }
+
+
+    })
+</script>
+
+</html>

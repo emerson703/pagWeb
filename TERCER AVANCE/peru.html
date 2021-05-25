@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1  ">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
+  <title>covid-Perú!😷</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">INICIO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">COVID-19-PERU</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contagiado">CONTAGIADOS COVID-19</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#fallecido">MUERTOS POR COVID-19</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a class="nav-link " href="#footer">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <hr>
+  <hr>
+  <hr>
+
+  <div class="container">
+    <iframe src="https://public.tableau.com/shared/5FRPRQWXG?:display_count=y&:origin=viz_share_link&:embed=y"
+      frameborder="0"></iframe>
+  </div>
+  <hr id="contagiado">
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="peru">
+
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <hr id="fallecido">
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <canvas id="muertosPeru">
+
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <footer class="text-center footer-style" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <h3>COVID-19</h3>
+          <p>
+            Es muy importante que tengamos en cuenta que el COVID-19 no solamente puede afectar a nuestra salud física,
+            sino que tambien puede afectar a nuestra cibersalud.
+          </p>
+          <img width="100%" height="200px" src="imagen/Captura01.PNG" alt="">
+        </div>
+        <div class="col-md-4 footer-col">
+          <h3>Mis redes</h3>
+          <ul class="list-inline">
+            <hr>
+            <li>
+              <a target="_blank" href="https://web.facebook.com/emerson.davilcas/" class="btn-social btn-outline"><img
+                  width="50px" height="50px" src="imagen/icon/facebook-f-brands.svg" alt=""></a>
+            </li>
+            <hr>
+            <li>
+              <a target="_blank" href="https://www.instagram.com/emersonvilcas/?hl=es-la"
+                class="btn-social btn-outline"><img width="50px" height="50px" src="imagen/icon/instagram-brands.svg"
+                  alt=""></a>
+            </li>
+            <hr>
+            <li>
+              <a target="_blank" href="https://www.youtube.com/channel/UCfiquoBt9s0WPPJ6MrA53Dw"
+                class="btn-social btn-outline"><img width="50px" height="50px" src="imagen/icon/youtube-brands.svg"
+                  alt=""></a>
+            </li>
+            <hr>
+            <p>&copy;Copyright</p>
+          </ul>
+        </div>
+        <div class="col-md-4 footer-col">
+          <!-- class="display-5  border-bottom: 2px groove"-->
+          <h3 style="border-bottom: 2px groove  tomato;">CONTACTO</h3>
+          <form action="">
+            <div class="mb-3">
+              <label for="">Nombres</label>
+              <input type="text" class="form-control" placeholder="Ingrese su Nombre">
+            </div>
+            <div class="mb-3">
+              <label for="">Correo Electronico</label>
+              <input type="text" class="form-control" placeholder="Ingrese su correo Electronico">
+            </div>
+            <div class="mb-3">
+              <label for="">Ingrese Comentario</label>
+              <textarea name="textmensaje" id="textmensaje" class="form-control" rows="3"></textarea>
+            </div>
+            <button class="btn btn-danger">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+  let infectados = document.getElementById("peru").getContext("2d");
+  var chart = new Chart(infectados, {
+    type: "bar",
+    data: {
+      labels: [
+        "Callao", "Arequipa", "Piura", "La Libertad", "Junin", "Áncash", "Departamento de Lima", "Cuzco", "Cajamarca",
+        "Lambayeque", "Ica", "San Martin", "Loreto", "Húanuco", "Puno", "Ucayali", "Ayacucho", "Amazonas", "Moquegua",
+        "Apurímac", "Tumbes", "Tacna", "Huancavelica", "Pasco", "Madre de Dios"
+      ],
+      datasets: [{
+        label: "CONTAGIADOS POR COVID 19 - PERU",
+        data: [94046, 78848, 75345, 73744, 68694, 67492, 61751, 59820, 56278, 53891, 51122, 42861, 39437, 31258, 31078, 30862, 28001,
+          27830, 24089, 21985, 16174, 14736, 14256, 13786, 12999
+
+        ],
+        backgroundColor: [
+          "	rgb(255, 191, 0)"
+        ]
+
+      }]
+    }
+
+
+  })
+</script>
+
+<script>
+  let peruMuertos = document.getElementById("muertosPeru").getContext("2d");
+  var chart = new Chart(peruMuertos, {
+    type: "bar",
+    data: {
+      labels: [
+        "Callao", "Arequipa", "Piura", "La Libertad", "Junin", "Áncash", "Departamento de Lima", "Cuzco", "Cajamarca",
+        "Lambayeque", "Ica", "San Martin", "Loreto", "Húanuco", "Puno", "Ucayali", "Ayacucho", "Amazonas", "Moquegua",
+        "Apurímac", "Tumbes", "Tacna", "Huancavelica", "Pasco", "Madre de Dios"
+      ],
+      datasets: [{
+        label: "MUERTOS POR COVID 19 - PERU",
+        data: [3388, 2740, 3239, 4068, 2454, 2927, 2773, 1361, 1443, 2692, 2990, 1286, 1411, 1047, 959, 977, 817, 502, 575, 580, 596, 270,
+          422, 421, 238
+
+        ],
+        backgroundColor: [
+          "	rgb(255, 191, 0)"
+        ]
+
+      }]
+    }
+
+
+  })
+</script>
+
+</html>
